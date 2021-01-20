@@ -117,7 +117,7 @@ router.delete('/:id', (req, res) => {
     Product.destroy({
         where: { id }
     }).then(isDeleted => {
-        res.send("" + isDeleted);
+        res.status(200).send("" + isDeleted);
     });
 });
 

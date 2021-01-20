@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
             model: Product
         }]
     }).then(rows => {
-        res.json(rows);
+        res.status(200).json(rows);
     });
 });
 
@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
             model: Product
         }]
     }).then(rows => {
-        res.json(rows);
+        res.status(200).json(rows);
     });
 });
 
@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
     const { tag_name } = req.body;
     Tag.create({ tag_name })
         .then(row => {
-            res.json(row);
+            res.status(200).json(row);
         })
 });
 
@@ -48,12 +48,18 @@ router.put('/:id', (req, res) => {
             id
         }
     }).then(isUpdated => {
-        res.send(isUpdated + "");
+        res.status(200).send(isUpdated + "");
     })
 });
 
 router.delete('/:id', (req, res) => {
     // delete on tag by its `id` value
+    const id = req.params.id;
+    Tag.destroy({
+        where: { id }
+    }).then(isDeleted => {
+        res.status(200).send("" + isDeleted);
+    });
 });
 
 module.exports = router;
