@@ -38,8 +38,18 @@ router.post('/', (req, res) => {
         })
 });
 
+
 router.put('/:id', (req, res) => {
     // update a tag's name by its `id` value
+    const { id } = req.params;
+    const { tag_name } = req.body;
+    Tag.update({ tag_name }, {
+        where: {
+            id
+        }
+    }).then(isUpdated => {
+        res.send(isUpdated + "");
+    })
 });
 
 router.delete('/:id', (req, res) => {
