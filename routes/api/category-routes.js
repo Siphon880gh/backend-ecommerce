@@ -2,9 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { Category, Product } = require('../../models');
 
-router.use(express.urlencoded({ extended: true }));
-router.use(express.json());
-
 // The `/api/categories` endpoint
 router.get('/', (req, res) => {
     // Find all categories and include its associated Products
@@ -14,6 +11,8 @@ router.get('/', (req, res) => {
         }]
     }).then(rows => {
         res.status(200).json(rows);
+    }).catch(err => {
+        return res.status(400).json({ 'error': err });
     });
 });
 
@@ -27,6 +26,8 @@ router.get('/:id', (req, res) => {
         }]
     }).then(rows => {
         res.status(200).json(rows);
+    }).catch(err => {
+        return res.status(400).json({ 'error': err });
     });
 });
 
@@ -36,7 +37,9 @@ router.post('/', (req, res) => {
     Category.create({ category_name })
         .then(row => {
             res.status(200).json(row);
-        })
+        }).catch(err => {
+            return res.status(400).json({ 'error': err });
+        });
 });
 
 router.put('/:id', (req, res) => {
@@ -49,7 +52,9 @@ router.put('/:id', (req, res) => {
         }
     }).then(isUpdated => {
         res.status(200).send(isUpdated + "");
-    })
+    }).catch(err => {
+        return res.status(400).json({ 'error': err });
+    });
 });
 
 router.delete('/:id', (req, res) => {
@@ -59,6 +64,8 @@ router.delete('/:id', (req, res) => {
         where: { id }
     }).then(isDeleted => {
         res.status(200).send("" + isDeleted);
+    }).catch(err => {
+        return res.status(400).json({ 'error': err });
     });
 });
 

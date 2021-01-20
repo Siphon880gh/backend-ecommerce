@@ -14,6 +14,8 @@ router.get('/', (req, res) => {
         }]
     }).then(rows => {
         res.json(rows);
+    }).catch(err => {
+        return res.status(400).json({ 'error': err });
     });
 });
 
@@ -33,6 +35,8 @@ router.get('/:id', (req, res) => {
         }]
     }).then(rows => {
         res.json(rows);
+    }).catch(err => {
+        return res.status(400).json({ 'error': err });
     });
 });
 
@@ -118,6 +122,8 @@ router.delete('/:id', (req, res) => {
         where: { id }
     }).then(isDeleted => {
         res.status(200).send("" + isDeleted);
+    }).catch(err => {
+        return res.status(400).json({ 'error': err });
     });
 });
 
