@@ -14,8 +14,16 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    // find one category by its `id` value
-    // be sure to include its associated Products
+    // find one category by its `id` value and include its associated Products
+    const id = req.params.id;
+    Category.findOne({
+        where: { id },
+        include: [{
+            model: Product
+        }]
+    }).then(rows => {
+        res.json(rows);
+    });
 });
 
 router.post('/', (req, res) => {
