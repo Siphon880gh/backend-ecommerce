@@ -1,5 +1,9 @@
-const router = require('express').Router();
+const express = require("express");
+const router = express.Router();
 const { Category, Product } = require('../../models');
+
+router.use(express.urlencoded({ extended: true }));
+router.use(express.json());
 
 // The `/api/categories` endpoint
 router.get('/', (req, res) => {
@@ -28,6 +32,11 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     // create a new category
+    const { category_name } = req.body;
+    Category.create({ category_name })
+        .then(row => {
+            res.json(row);
+        })
 });
 
 router.put('/:id', (req, res) => {
