@@ -5,6 +5,10 @@ const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
 
 // Products belongsTo Category
+// References the category model's id
+Product.hasMany(Tag, {
+    foreignKey: 'category_id'
+});
 
 // Categories have many Products
 
