@@ -1,6 +1,5 @@
 Ecommerce Backend
 ====
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Last Commit](https://img.shields.io/github/last-commit/Siphon880gh/backend-ecommerce/master)
 <a href="https://www.linkedin.com/in/weng-fung/">![Linked-In](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&labelColor=blue)</a>
 
@@ -18,7 +17,6 @@ Table of Contents
 - [Video](#video)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Questions](#questions)
 
 Installation
@@ -121,10 +119,6 @@ Make requests to the following routes at port 3001.
  
 - Delete tag by Id
   - `DELETE api/tags/:id`
-
-License
----
-[MIT License](https://opensource.org/licenses/MIT)
 
 Questions
 ---
