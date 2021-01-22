@@ -8,7 +8,7 @@ By Weng Fei Fung. Backend for Ecommerce websites. MySQL database with Sequelize 
 
 Video
 ---
-Watch [Youtube video](https://www.youtube.com/watch?v=NpEaa2P7qZI)
+Watch [Youtube video](https://www.youtube.com/watch?v=s-0sNWgcSIQ)
 
 Table of Contents
 ---
