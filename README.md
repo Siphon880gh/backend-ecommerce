@@ -2,6 +2,7 @@ Ecommerce Backend
 ====
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Last Commit](https://img.shields.io/github/last-commit/Siphon880gh/backend-ecommerce/master)
+<a href="https://www.linkedin.com/in/weng-fung/">![Linked-In](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&labelColor=blue)</a>
 
 Description
 ---
